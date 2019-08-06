@@ -8,7 +8,11 @@ const CharacterItem = ({ character, showModal }) => {
   useEffect(() => {
     const fetchData = async () => {
       const res = await axios.get(character.randQuote)
-      if (res.statusText !== 'OK') setFetchError('Unable to fetch quotes')
+      if (res.statusText !== 'OK') {
+        setFetchError('Unable to fetch quotes')
+        return
+      }
+      setFetchError('')
       setQuote(res.data[0].quote)
     }
     fetchData()

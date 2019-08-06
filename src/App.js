@@ -40,7 +40,7 @@ function App() {
       <GlobalStyle />
       <h1>Top 10 Futurama Characters</h1>
       <CharactersList characters={characters} showModal={showModal} />
-      {modalVisibility && <Modal close={() => toggleModalVisibility(false)} character={chosenCharacter} />}
+      <Modal visible={modalVisibility} close={() => toggleModalVisibility(false)} character={chosenCharacter} />
     </div>
   )
 }
