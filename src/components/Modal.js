@@ -51,7 +51,11 @@ Modal.propTypes = {
     name: PropTypes.string.isRequired,
     randQuote: PropTypes.string.isRequired,
     quotesList: PropTypes.string.isRequired,
-  }).isRequired,
+  }),
   close: PropTypes.func.isRequired,
   visible: PropTypes.bool.isRequired,
+}
+
+Modal.defaultProps = {
+  character: {},
 }

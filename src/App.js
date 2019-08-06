@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react'
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import { CHARACTERS } from './constants'
 import CharactersList from './components/CharactersList'
 import Modal from './components/Modal'
@@ -25,6 +25,14 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+const AppContainer = styled.div`
+  max-width: 114rem;
+  margin: 0 auto;
+  .header {
+    text-align: center;
+  }
+`
+
 function App() {
   const [characters] = useState(CHARACTERS)
   const [chosenCharacter, setChosenCharacter] = useState(null)
@@ -36,12 +44,12 @@ function App() {
     toggleModalVisibility(true)
   }, [])
   return (
-    <div>
+    <AppContainer>
       <GlobalStyle />
-      <h1>Top 10 Futurama Characters</h1>
+      <h1 className="header">Top 10 Futurama Characters</h1>
       <CharactersList characters={characters} showModal={showModal} />
       <Modal visible={modalVisibility} close={() => toggleModalVisibility(false)} character={chosenCharacter} />
-    </div>
+    </AppContainer>
   )
 }
 
