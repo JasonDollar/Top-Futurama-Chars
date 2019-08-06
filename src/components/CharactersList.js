@@ -7,10 +7,11 @@ import CharacterItem from './CharacterItem'
 const List = styled.ul`
   list-style: none;
   margin: .5rem;
+  margin-bottom: 1.5rem;
   padding: 0;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 2rem;
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
     margin: 0;

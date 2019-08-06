@@ -38,6 +38,7 @@ const Modal = ({ character, close, visible }) => {
       <Backdrop onClick={close} visible={visible} />
       <ModalContainer visible={visible}>
         {quotes.map((item, i) => <p key={i}>{item}</p>)}
+        {fetchError && <p>{fetchError}</p>}
       </ModalContainer>
     </Fragment>
   )

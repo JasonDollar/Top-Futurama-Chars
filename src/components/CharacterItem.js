@@ -36,6 +36,8 @@ const ListItem = styled.li`
     grid-row: 1 / 2 ;
     justify-self: center;
     align-self: center;
+    font-size: 3rem;
+    text-align: center;
   }
   .message {
     margin: .5rem;
@@ -46,6 +48,8 @@ const ListItem = styled.li`
     justify-self: center;
     @media (min-width: 576px) {
       grid-column: 2 / 3;
+      margin: 1rem;
+      margin-bottom: 2rem;
     }
   }
 `
