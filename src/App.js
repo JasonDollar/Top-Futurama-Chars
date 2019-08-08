@@ -39,7 +39,7 @@ function App() {
   const [modalVisibility, toggleModalVisibility] = useState(false)
   const showModal = useCallback(id => {
     const char = characters.find(item => item.id === id)
-    console.log(char)
+    
     setChosenCharacter(char)
     toggleModalVisibility(true)
   }, [])

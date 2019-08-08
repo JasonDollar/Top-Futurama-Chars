@@ -7,7 +7,7 @@ const Backdrop = styled.div`
   left: 0;
   right: 0;
   z-index: 90;
-  background: rgba(0,0,0,.6);
+  background: rgba(0,0,0,.7);
   transition: all .35s;
 `
 

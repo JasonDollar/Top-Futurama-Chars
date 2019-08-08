@@ -6,20 +6,21 @@ import placeholderImg from '../img/placeholder.png'
 
 const ListItem = styled.li`
   cursor: pointer;
-  border: 1px solid red;
   display: grid;
+  border-radius: 10px;
   grid-template-columns: 30% 1fr;
   grid-template-rows: 1fr auto;
+  box-shadow: 0 0 9px -2px #333;
 
   .imgContainer {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     height: 15rem;
-    /* flex: 0 0 90%; */
     overflow: hidden;
     margin: .5rem;
     display: flex;
     justify-content: center;
+    align-items: center;
     @media (min-width: 576px) {
       grid-row: 1 / -1;
       margin: 1rem;
@@ -27,7 +28,6 @@ const ListItem = styled.li`
     & .charImg {
       display: block;
       height: 100%;
-      margin: 0 auto;
     }
   }
   .name {
@@ -40,8 +40,7 @@ const ListItem = styled.li`
     text-align: center;
   }
   .message {
-    margin: .5rem;
-    /* margin-bottom: .5rem; */
+    margin: 1rem;
     font-style: italic;
     grid-column: 1 / -1;
     grid-row: 2 / 3 ;
@@ -59,11 +58,11 @@ const CharacterItem = ({ character, showModal }) => {
   const [image, setImage] = useState('')
   const [fetchError, setFetchError] = useState('')
   const [loadingQuote, toggleLoadingQuote] = useState(true)
-
+  
   useEffect(() => {
     const fetchData = async () => {
       const res = await axios.get(character.randQuote)
-      console.log(res)
+      
       toggleLoadingQuote(false)
       if (res.statusText !== 'OK') {
         setFetchError('Unable to fetch quotes')
