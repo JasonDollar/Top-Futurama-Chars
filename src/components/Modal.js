@@ -25,11 +25,19 @@ const ModalContainer = styled.div`
   }
   .name {
     text-align: center;
+    font-size: 2.4rem;
+    margin: 1rem auto;
+    @media (min-width: 576px) {
+      font-size: 3rem;
+      margin: 2rem 0;
+    }
   }
   .quote {
     font-style: italic;
+    margin: 1rem auto;
     @media (min-width: 576px) {
       font-size: 2rem;
+      margin: 1.5rem auto;
     }
   }
   .buttonClose {
@@ -43,6 +51,7 @@ const ModalContainer = styled.div`
     border-radius: 100px;
     margin: 0 auto;
     margin-bottom: 1rem;
+    cursor: pointer;
   }
 `
 
