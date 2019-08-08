@@ -66,6 +66,7 @@ const CharacterItem = ({ character, showModal }) => {
       toggleLoadingQuote(false)
       if (res.statusText !== 'OK') {
         setFetchError('Unable to fetch quotes')
+        toggleLoadingQuote(false)
         return
       }
       setFetchError('')

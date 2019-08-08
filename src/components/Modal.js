@@ -67,8 +67,8 @@ const Modal = ({ character, close, visible }) => {
   return (
     <Fragment>
       <Backdrop onClick={close} visible={visible} />
-      <ModalContainer visible={visible}>
-        <h2 className="name">{character && character.name}'s quotes</h2>
+      <ModalContainer visible={visible} role="dialog" aria-labelledby="dialogName" aria-modal="true">
+        <h2 className="name" id="dialogName">{character && character.name}'s quotes</h2>
         {quotes.map((item, i) => <p key={i} className="quote">- {item}</p>)}
         {fetchError && <p>{fetchError}</p>}
         <button type="button" className="buttonClose" onClick={close}>
